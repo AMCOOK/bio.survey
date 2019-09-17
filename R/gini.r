@@ -20,11 +20,16 @@ gini <- function(x,y,plot=F){
 		    Xi$cP = cumsum(Xi$P) / sum(Xi$P)
 		    Xi$cA = cumsum(Xi$Ah) / sum(Xi$Ah)
 		      if(plot) {
-		    	plot(cA,cP,type='l')
+		    	with(Xi,plot(cA,cP,type='l'))
 		    	abline(a=0,b=1,col='blue')
 		    	}
 		  gI=NA
 
 		  if(nrow(Xi)>1)  gI = 1-(2*sum(rowMeans(embed(Xi$cP,2)) * diff(Xi$cA)))
+		  if(is.finite(gI)){
+		  		if(gI<0){
+		  			gI = NA
+		  		}
+		  	}
 		    return(gI)
 			}
