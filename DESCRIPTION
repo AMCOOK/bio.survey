@@ -6,8 +6,6 @@ Description: What the package does (one paragraph).
 Depends:
     R (>= 3.3.0)
 Imports:
-    bio.base,
-    bio.utilities,
     devtools    
 License: MIT
 Encoding: UTF-8
