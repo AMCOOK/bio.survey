@@ -13,7 +13,7 @@ summary.strata <- function (object, alpha.t = 0.05, effic = FALSE, nopt = FALSE,
     ci.yst <- yst + (c(qt(alpha.t/2, df.yst), -qt(alpha.t/2, 
         df.yst)) * se.yst)
     if(any(length(object$Wh) != length(object$nhws) | length(object$nhws)!= length(object$nh))) browser()
-    dwao <- sum(object$Wh*(object$nhws / object$nh)) * sum(object$Nh) * 0.011801 
+    dwao <- sum(object$Wh*(object$nhws / object$nh)) * sum(object$Nh) 
     gi=NA
     if(length(yh)>1) gi <- gini(x=yh,y=object$Nh)
     
